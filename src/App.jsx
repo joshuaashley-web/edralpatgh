@@ -66,40 +66,92 @@ export default function App() {
       {/* HOME */}
       <section
         id="home"
+  style={{
+    position: "relative",
+    height: "90vh",
+    overflow: "hidden",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      width: "300%",
+      height: "100%",
+      animation: "slideShow 18s infinite",
+    }}
+  >
+    {/* Mining Tools */}
+    <div
+      style={{
+        width: "100%",
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    ></div>
+
+    {/* Heavy Machinery Tires */}
+    <div
+      style={{
+        width: "100%",
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    ></div>
+
+    {/* Commodities */}
+    <div
+      style={{
+        width: "100%",
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1600&q=80)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    ></div>
+  </div>
+
+  {/* Overlay */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      background: "rgba(0,0,0,0.55)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      padding: "20px",
+    }}
+  >
+    <div>
+      <h2
         style={{
-          minHeight: "90vh",
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=80)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          padding: "20px",
+          fontSize: "55px",
+          marginBottom: "20px",
         }}
       >
-        <div
-          style={{
-            background: "rgba(0,0,0,0.65)",
-            padding: "40px",
-            borderRadius: "20px",
-            maxWidth: "800px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "48px",
-              marginBottom: "15px",
-            }}
-          >
-            EdralpatGH Distribution & Sales
-          </h2>
+        EdralpatGH Distribution & Sales
+      </h2>
 
-          <p style={{ fontSize: "20px" }}>
-            Trusted supplier of tires, rice, oils, and essential commodities.
-          </p>
-        </div>
+      <p
+        style={{
+          fontSize: "22px",
+          maxWidth: "850px",
+          margin: "0 auto",
+        }}
+      >
+        Mining tools, heavy machinery tires, rice, oils, and essential
+        commodities distribution across Ghana and beyond.
+      </p>
+    </div>
+  </div>
       </section>
 
       {/* ABOUT */}
