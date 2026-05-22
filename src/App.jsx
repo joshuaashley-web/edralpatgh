@@ -136,12 +136,12 @@ export default function App() {
           </div>
 
           <div style={cardStyle}>
-            <h3>Rice Supply</h3>
+            <h3>Mining Tools</h3>
             <p>Wholesale and retail rice distribution.</p>
           </div>
 
           <div style={cardStyle}>
-            <h3>Oils & Commodities</h3>
+            <h3>Commodities</h3>
             <p>Food products and other essential commodities.</p>
           </div>
 
@@ -188,7 +188,7 @@ export default function App() {
         <h2 style={headingStyle}>Contact Us</h2>
 
         <p>Email: info@edralpatgh.com</p>
-        <p>Phone: +233 00 000 0000</p>
+        <p>Phone: +233 24 286 7647</p>
         <p>Location: Accra, Ghana</p>
       </section>
 
