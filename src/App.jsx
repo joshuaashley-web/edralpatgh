@@ -296,3 +296,22 @@ const imageStyle = {
   objectFit: "cover",
   borderRadius: "20px",
 };
+
+const styleSheet = document.styleSheets[0];
+
+const keyframes = `
+@keyframes slideShow {
+  0% { transform: translateX(0%); }
+  30% { transform: translateX(0%); }
+
+  33% { transform: translateX(-100%); }
+  63% { transform: translateX(-100%); }
+
+  66% { transform: translateX(-200%); }
+  96% { transform: translateX(-200%); }
+
+  100% { transform: translateX(0%); }
+}
+`;
+
+styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
