@@ -65,92 +65,37 @@ export default function App() {
 
       {/* HOME */}
       <section
-        id="home"
+  id="home"
   style={{
     position: "relative",
     height: "90vh",
     overflow: "hidden",
   }}
 >
-  <div
-    style={{
-      display: "flex",
-      width: "300%",
-      height: "100%",
-      animation: "slideShow 18s infinite",
-    }}
-  >
-    {/* Mining Tools */}
+  <div className="slider">
     <div
+      className="slide"
       style={{
-        width: "100%",
         backgroundImage:
           "url(https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     ></div>
 
-    {/* Heavy Machinery Tires */}
     <div
+      className="slide"
       style={{
-        width: "100%",
         backgroundImage:
           "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     ></div>
 
-    {/* Commodities */}
     <div
+      className="slide"
       style={{
-        width: "100%",
         backgroundImage:
           "url(https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1600&q=80)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     ></div>
-  </div>
-
-  {/* Overlay */}
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      background: "rgba(0,0,0,0.55)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      padding: "20px",
-    }}
-  >
-    <div>
-      <h2
-        style={{
-          fontSize: "55px",
-          marginBottom: "20px",
-        }}
-      >
-        EdralpatGH Distribution & Sales
-      </h2>
-
-      <p
-        style={{
-          fontSize: "22px",
-          maxWidth: "850px",
-          margin: "0 auto",
-        }}
-      >
-        Mining tools, heavy machinery tires, rice, oils, and essential
-        commodities distribution across Ghana and beyond.
-      </p>
-    </div>
   </div>
       </section>
 
@@ -258,60 +203,44 @@ export default function App() {
   );
 }
 
-const linkStyle = {
-  color: "white",
-  textDecoration: "none",
-  fontWeight: "bold",
-};
+const sliderStyles = `
+.slider{
+  position:relative;
+  width:100%;
+  height:100%;
+}
 
-const sectionStyle = {
-  padding: "80px 20px",
-  textAlign: "center",
-};
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  animation:fade 24s infinite;
+}
 
-const headingStyle = {
-  fontSize: "38px",
-  marginBottom: "20px",
-};
+.slide:nth-child(1){
+  animation-delay:0s;
+}
 
-const gridStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-  gap: "20px",
-  marginTop: "30px",
-  maxWidth: "1100px",
-  marginLeft: "auto",
-  marginRight: "auto",
-};
+.slide:nth-child(2){
+  animation-delay:8s;
+}
 
-const cardStyle = {
-  background: "#111827",
-  padding: "25px",
-  borderRadius: "20px",
-};
+.slide:nth-child(3){
+  animation-delay:16s;
+}
 
-const imageStyle = {
-  width: "100%",
-  height: "250px",
-  objectFit: "cover",
-  borderRadius: "20px",
-};
-
-const styleSheet = document.styleSheets[0];
-
-const keyframes = `
-@keyframes slideShow {
-  0% { transform: translateX(0%); }
-  30% { transform: translateX(0%); }
-
-  33% { transform: translateX(-100%); }
-  63% { transform: translateX(-100%); }
-
-  66% { transform: translateX(-200%); }
-  96% { transform: translateX(-200%); }
-
-  100% { transform: translateX(0%); }
+@keyframes fade{
+  0%{opacity:0;}
+  8%{opacity:1;}
+  30%{opacity:1;}
+  38%{opacity:0;}
+  100%{opacity:0;}
 }
 `;
 
-styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+const style = document.createElement("style");
+style.innerHTML = sliderStyles;
+document.head.appendChild(style);
