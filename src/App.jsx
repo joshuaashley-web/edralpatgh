@@ -255,7 +255,7 @@ export default function App() {
 
         <section id="contact" style={contactBar}>
           <div>
-            <strong>📞 +233 00 000 0000</strong>
+            <strong>📞 +233 24 286 7647</strong>
           </div>
           <div>
             <strong>✉️ info@edralpat.com</strong>
