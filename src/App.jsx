@@ -10,7 +10,50 @@ export default function App() {
         minHeight: "100vh",
       }}
     >
-      {/* NAVBAR */}
+      <style>
+        {`
+          .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+
+          .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fadeSlider 30s infinite;
+          }
+
+          .slide:nth-child(1) {
+            animation-delay: 0s;
+          }
+
+          .slide:nth-child(2) {
+            animation-delay: 10s;
+          }
+
+          .slide:nth-child(3) {
+            animation-delay: 20s;
+          }
+
+          @keyframes fadeSlider {
+            0% { opacity: 0; }
+            8% { opacity: 1; }
+            30% { opacity: 1; }
+            38% { opacity: 0; }
+            100% { opacity: 0; }
+          }
+
+          a:hover {
+            color: #f97316 !important;
+          }
+        `}
+      </style>
+
       <header
         style={{
           padding: "20px",
@@ -33,113 +76,82 @@ export default function App() {
         >
           <h1 style={{ margin: 0 }}>EdralpatGH</h1>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "18px",
-              flexWrap: "wrap",
-            }}
-          >
-            <a href="#home" style={linkStyle}>
-              Home
-            </a>
-
-            <a href="#about" style={linkStyle}>
-              About
-            </a>
-
-            <a href="#products" style={linkStyle}>
-              Products
-            </a>
-
-            <a href="#gallery" style={linkStyle}>
-              Gallery
-            </a>
-
-            <a href="#contact" style={linkStyle}>
-              Contact Us
-            </a>
+          <div style={{ display: "flex", gap: "18px", flexWrap: "wrap" }}>
+            <a href="#home" style={linkStyle}>Home</a>
+            <a href="#about" style={linkStyle}>About</a>
+            <a href="#products" style={linkStyle}>Products</a>
+            <a href="#gallery" style={linkStyle}>Gallery</a>
+            <a href="#contact" style={linkStyle}>Contact Us</a>
           </div>
         </nav>
       </header>
 
-      {/* HOME */}
       <section
-  id="home"
-  style={{
-    position: "relative",
-    height: "90vh",
-    overflow: "hidden",
-  }}
->
-  <div className="slider">
-    <div
-      className="slide"
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80)",
-      }}
-    ></div>
+        id="home"
+        style={{
+          position: "relative",
+          height: "90vh",
+          overflow: "hidden",
+        }}
+      >
+        <div className="slider">
+          <div
+            className="slide"
+            style={{
+              backgroundImage:
+                "url(https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80)",
+            }}
+          ></div>
 
-    <div
-      className="slide"
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80)",
-      }}
-    ></div>
+          <div
+            className="slide"
+            style={{
+              backgroundImage:
+                "url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80)",
+            }}
+          ></div>
 
-    <div
-      className="slide"
-      style={{
-        backgroundImage:
-          "url(https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1600&q=80)",
-      }}
-    ></div>
-  </div>
+          <div
+            className="slide"
+            style={{
+              backgroundImage:
+                "url(https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1600&q=80)",
+            }}
+          ></div>
+        </div>
       </section>
 
-      {/* ABOUT */}
       <section id="about" style={sectionStyle}>
         <h2 style={headingStyle}>About Us</h2>
-
-        <p
-          style={{
-            maxWidth: "750px",
-            margin: "20px auto",
-            lineHeight: "1.7",
-          }}
-        >
-          EdralpatGH specializes in tire distribution, rice supply, oils,
-          commodities, and product advertising solutions for individuals,
+        <p style={paragraphStyle}>
+          EdralpatGH specializes in tire distribution, mining tools, heavy machinery tires,
+          rice, oils, commodities, and product advertising solutions for individuals,
           shops, companies, and bulk buyers.
         </p>
       </section>
 
-      {/* PRODUCTS */}
-      <section
-        id="products"
-        style={{
-          ...sectionStyle,
-          background: "#0f172a",
-        }}
-      >
+      <section id="products" style={{ ...sectionStyle, background: "#0f172a" }}>
         <h2 style={headingStyle}>Products</h2>
 
         <div style={gridStyle}>
           <div style={cardStyle}>
-            <h3>Vehicle Tires</h3>
-            <p>Quality tires for cars, trucks, and commercial vehicles.</p>
+            <h3>Heavy Machinery Tires</h3>
+            <p>Durable tires for trucks, mining, construction, and industrial vehicles.</p>
           </div>
 
           <div style={cardStyle}>
             <h3>Mining Tools</h3>
+            <p>Reliable tools and equipment support for mining and field operations.</p>
+          </div>
+
+          <div style={cardStyle}>
+            <h3>Rice Supply</h3>
             <p>Wholesale and retail rice distribution.</p>
           </div>
 
           <div style={cardStyle}>
-            <h3>Commodities</h3>
-            <p>Food products and other essential commodities.</p>
+            <h3>Oils & Commodities</h3>
+            <p>Food products and essential commodities.</p>
           </div>
 
           <div style={cardStyle}>
@@ -149,20 +161,19 @@ export default function App() {
         </div>
       </section>
 
-      {/* GALLERY */}
       <section id="gallery" style={sectionStyle}>
         <h2 style={headingStyle}>Gallery</h2>
 
         <div style={gridStyle}>
           <img
-            src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=900&q=80"
-            alt="Vehicle tires"
+            src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=80"
+            alt="Mining tools"
             style={imageStyle}
           />
 
           <img
-            src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=900&q=80"
-            alt="Distribution truck"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+            alt="Heavy machinery"
             style={imageStyle}
           />
 
@@ -174,22 +185,13 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section
-        id="contact"
-        style={{
-          ...sectionStyle,
-          background: "#0f172a",
-        }}
-      >
+      <section id="contact" style={{ ...sectionStyle, background: "#0f172a" }}>
         <h2 style={headingStyle}>Contact Us</h2>
-
         <p>Email: info@edralpatgh.com</p>
-        <p>Phone: +233 24 286 7647</p>
+        <p>Phone: +233 00 000 0000</p>
         <p>Location: Accra, Ghana</p>
       </section>
 
-      {/* FOOTER */}
       <footer
         style={{
           textAlign: "center",
@@ -203,44 +205,47 @@ export default function App() {
   );
 }
 
-const sliderStyles = `
-.slider{
-  position:relative;
-  width:100%;
-  height:100%;
-}
+const linkStyle = {
+  color: "white",
+  textDecoration: "none",
+  fontWeight: "bold",
+};
 
-.slide{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  animation:fade 24s infinite;
-}
+const sectionStyle = {
+  padding: "80px 20px",
+  textAlign: "center",
+};
 
-.slide:nth-child(1){
-  animation-delay:0s;
-}
+const headingStyle = {
+  fontSize: "38px",
+  marginBottom: "20px",
+};
 
-.slide:nth-child(2){
-  animation-delay:8s;
-}
+const paragraphStyle = {
+  maxWidth: "750px",
+  margin: "20px auto",
+  lineHeight: "1.7",
+};
 
-.slide:nth-child(3){
-  animation-delay:16s;
-}
+const gridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+  gap: "20px",
+  marginTop: "30px",
+  maxWidth: "1100px",
+  marginLeft: "auto",
+  marginRight: "auto",
+};
 
-@keyframes fade{
-  0%{opacity:0;}
-  8%{opacity:1;}
-  30%{opacity:1;}
-  38%{opacity:0;}
-  100%{opacity:0;}
-}
-`;
+const cardStyle = {
+  background: "#111827",
+  padding: "25px",
+  borderRadius: "20px",
+};
 
-const style = document.createElement("style");
-style.innerHTML = sliderStyles;
-document.head.appendChild(style);
+const imageStyle = {
+  width: "100%",
+  height: "250px",
+  objectFit: "cover",
+  borderRadius: "20px",
+};
