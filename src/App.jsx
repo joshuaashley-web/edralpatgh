@@ -241,12 +241,12 @@ export default function App() {
               style={galleryImage}
             />
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+              src="https://plus.unsplash.com/premium_photo-1673208484517-deeab27359b4?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Heavy tires"
               style={galleryImage}
             />
             <img
-              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=80"
+              src="hhttps://images.unsplash.com/photo-1580901369227-308f6f40bdeb?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Commodities"
               style={galleryImage}
             />
